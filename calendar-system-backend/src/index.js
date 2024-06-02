@@ -27,6 +27,7 @@ app.post("/auth/google", async (req, res) => {
   try {
     const { code } = req.body;
     console.log('code' , code);
+    console.log('client' , client);
     const { tokens } = await client.getToken(code);
 
     console.log('tokens' ,  tokens);
