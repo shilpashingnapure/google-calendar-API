@@ -7,5 +7,6 @@ dotenv.config({});
 export const client = new OAuth2Client(
     process.env.CLIENT_ID,
     process.env.CLIENT_SECRET,
-    "http://localhost:3000"
+    process.env.REDIRECT_URL
+    // "http://localhost:3000"
   );
