@@ -15,12 +15,13 @@ export const User = mongoose.model('User', userSchema);
 const eventSchema = new mongoose.Schema({
   title : String ,
   description : String  , 
-  participants : String , 
+  participants : [ { email : String } ], 
   date : Date ,
   start : Date ,
   end : Date , 
   sessionNote : String  , 
-  userId : { type : Schema.Types.ObjectId , ref : 'User' }
+  userId : { type : Schema.Types.ObjectId , ref : 'User' },
+  googleEventId : String 
 
 
 })
