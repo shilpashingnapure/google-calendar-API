@@ -24,18 +24,7 @@ app.use(express.json());
 app.post("/auth/google", async (req, res) => {
   try {
     const { code } = req.body;
-    console.log("code", code);
-    console.log(
-      "client",
-      client,
-      process.env.SECRET_KEY,
-      process.env.CLIENT_ID,
-      process.env.CLIENT_SECRET,
-      process.env.REDIRECT_URL
-    );
     const { tokens } = await client.getToken(code);
-
-    console.log("tokens", tokens);
 
     // verity token
     const tokenResponse = await client.verifyIdToken({

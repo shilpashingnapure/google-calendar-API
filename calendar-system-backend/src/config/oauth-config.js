@@ -8,5 +8,4 @@ export const client = new OAuth2Client(
     process.env.CLIENT_ID,
     process.env.CLIENT_SECRET,
     process.env.REDIRECT_URL
-    // "http://localhost:3000"
   );
