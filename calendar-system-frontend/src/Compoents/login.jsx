@@ -2,11 +2,12 @@ import Cookies from "js-cookie";
 import {
     useGoogleLogin,
   } from "@react-oauth/google";
+import { MAIN_URL } from "../utilites/rest.methods";
 
 export const Login = () => {
     async function handleLogin(googleResponse) {
       const { code } = googleResponse;
-      const res = await fetch("http://localhost:8000/auth/google", {
+      const res = await fetch(`${MAIN_URL}/auth/google`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code }),

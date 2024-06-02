@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-const MAIN_URL = "http://localhost:8000";
+export const MAIN_URL = process.env.NODE_ENV == 'production' ? 'https://google-calendar-api.onrender.com' : 'http://localhost:8000';
 
 const token = Cookies.get("authToken");
 
