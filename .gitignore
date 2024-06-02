@@ -1,0 +1,7 @@
+/calendar-system-backend/node_modules
+
+/calendar-system-frontend/node_modules
+
+
+.DS_Store
+.env
