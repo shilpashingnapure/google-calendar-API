@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import jwt from "jsonwebtoken";
 import { dbConnection } from "./config/db.js";
-import { User } from "./user.model.js";
+import { User } from "./db.model.js";
 import { authenticateToken } from "./middlerware/authenticate-token.js";
 import { createEvent } from "./controllers/create-event.js";
 import { client } from "./config/oauth-config.js";
@@ -68,6 +68,7 @@ app.post("/auth/google", async (req, res) => {
     });
   }
 });
+
 
 // event CURD oprations
 app.get("/events", authenticateToken, getAllEvents);

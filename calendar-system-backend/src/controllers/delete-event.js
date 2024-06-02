@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 
-import { Event, User } from "../user.model.js";
+import { Event, User } from "../db.model.js";
 import { client } from "../config/oauth-config.js";
 export async function deleteEvent(req , res){
     try {

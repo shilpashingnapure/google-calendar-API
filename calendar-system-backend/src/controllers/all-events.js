@@ -1,4 +1,4 @@
-import { Event } from "../user.model.js";
+import { Event } from "../db.model.js";
 export async function getAllEvents(req, res) {
   try {
     const events = await Event.find({ userId: req.user.userid });

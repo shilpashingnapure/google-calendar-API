@@ -1,12 +1,13 @@
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import { Avatar } from "@mui/material";
+import { Avatar, Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { ScheduleCreateForm } from "./event.create";
 import { ScheduleUpdateForm } from "./event.update";
 import { EventDetails } from "./event.detail";
 import { getMethod } from "../utilites/rest.methods";
+import Cookies from "js-cookie";
 
 export const CalendarView = () => {
   const [openCreateForm, setOpenCreateForm] = useState(false);
@@ -79,12 +80,21 @@ export const CalendarView = () => {
     );
   }
 
+
+  function logout(){
+    Cookies.remove('authToken');
+    window.location.href = '/';
+  }
+
+  
+
   
 
   return (
     <div className="calendar-view flex flex-col gap-1 bg-blue-400 h-screen">
-      <header className="absolute right-0 p-5">
+      <header className="absolute right-0 p-5 flex gap-4 items-center">
         <Avatar sx={{ width: "70px", height: "70px" }} />
+        <Button variant="contained" onClick={logout}>logout</Button>
       </header>
       <div
         className={`h-[75vh] ${
