@@ -22,6 +22,7 @@ export function EventDetails({ open, data, onClose, edit }) {
     // delete event
     async function handleDeleteEvent() {
       await deleteMethod(`/delete-event/${data.event.extendedProps.googleEventId}`)
+      onClose();
     }
   
     return (

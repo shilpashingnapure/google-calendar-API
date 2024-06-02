@@ -29,6 +29,7 @@ export const CalendarView = () => {
   function handleFormClose() {
     setOpenCreateForm(false);
     setOpenEditForm(false);
+    setOpenEventDetails(false)
     getEvents();  
   }
 
@@ -121,7 +122,7 @@ export const CalendarView = () => {
       <EventDetails
         open={openEventDetails}
         data={eventDetails}
-        onClose={() => setOpenEventDetails(false)}
+        onClose={handleFormClose}
         edit={handleUpdateFormState}
       />
     </div>
