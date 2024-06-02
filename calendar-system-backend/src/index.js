@@ -16,6 +16,9 @@ import { getAllEvents } from "./controllers/all-events.js";
 dotenv.config({});
 const app = express();
 app.use(cors());
+
+// preflight req
+app.options('*', cors());
 app.use(express.json());
 
 

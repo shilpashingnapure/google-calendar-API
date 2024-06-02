@@ -2,6 +2,7 @@ import Cookies from "js-cookie";
 
 export const MAIN_URL = process.env.NODE_ENV == 'production' ? 'https://google-calendar-api.onrender.com' : 'http://localhost:8000';
 
+
 const token = Cookies.get("authToken");
 
 export async function getMethod(endPoint) {
