@@ -78,7 +78,7 @@ export const ScheduleCreateForm = ({ open, onClose, currDate }) => {
               onChange={(e) => setParticipant(e.target.value)}
               className="flex-1"
               value={participant}
-              required
+              required={!participantsList.length}
             />
             <Button
               type="button"

@@ -26,8 +26,10 @@ app.use(express.json());
 app.post("/auth/google", async (req, res) => {
   try {
     const { code } = req.body;
-    
+    console.log('code' , code);
     const { tokens } = await client.getToken(code);
+
+    console.log('tokens' ,  tokens);
 
     // verity token
     const tokenResponse = await client.verifyIdToken({
